@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conductor | Moto App</title>
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="back" href="index.html">←</a>
+
+      <div class="brand compact">
+        <div class="brand-mark small">
+          <img src="assets/img/logo.jpg" alt="Logo" class="brand-logo" />
+        </div>
+        <div class="brand-title">Conductor</div>
+      </div>
+
+      <div class="badge">Cola en vivo</div>
+    </header>
+
+    <main class="container">
+
+      <!-- LISTA DE VIAJES -->
+      <section class="card">
+        <div class="section-head">
+          <h2>Viajes pendientes</h2>
+          <div class="pill-mini" id="pendingCount">0</div>
+        </div>
+
+        <div id="pendingList" class="queue">
+          <!-- items dinámicos -->
+        </div>
+
+        <div class="muted small mt8" id="queueHint">
+          Si hay viajes, aparecerán aquí automáticamente.
+        </div>
+      </section>
+
+      <!-- VIAJE SELECCIONADO -->
+      <section class="card">
+        <div class="section-head">
+          <h2>Viaje seleccionado</h2>
+          <div id="cEstado" class="status-pill neutral">Sin selección</div>
+        </div>
+
+        <div class="trip">
+          <div class="trip-row">
+            <div class="trip-label">Cliente</div>
+            <div id="cNombre" class="trip-value">—</div>
+          </div>
+          <div class="trip-row">
+            <div class="trip-label">ID</div>
+            <div id="cId" class="muted small">—</div>
+          </div>
+          <div class="trip-row">
+            <div class="trip-label">Coordenadas</div>
+            <div id="cCoords" class="muted small">Lat/Lng: —</div>
+          </div>
+
+          <div class="row mt8">
+            <button id="btnAceptar" class="btn primary" disabled>Aceptar</button>
+            <button id="btnFinalizar" class="btn dark" disabled>Finalizar</button>
+            <button id="btnLimpiarSel" class="btn ghost" disabled>Quitar selección</button>
+          </div>
+
+          <div class="muted small mt8" id="driverHint">
+            Selecciona un viaje pendiente para ver detalles y aceptarlo.
+          </div>
+        </div>
+      </section>
+
+      <!-- MAPA -->
+      <section class="card map-card">
+        <div class="map-header">
+          <h2>Mapa</h2>
+          <div class="muted small">Marcador = cliente</div>
+        </div>
+        <div id="mapConductor" class="map"></div>
+        <div class="muted small mt8">
+          * Al seleccionar un viaje, el mapa apunta al cliente.
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="muted">Conductor • Cola en tiempo real • Firebase RTDB</span>
+    </footer>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script type="module" src="assets/js/conductor.js"></script>
+</body>
+</html>

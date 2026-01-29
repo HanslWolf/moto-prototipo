@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cliente | Moto App</title>
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <a class="back" href="index.html">←</a>
+
+      <div class="brand compact">
+        <div class="brand-mark small">
+          <img src="assets/img/logo.jpg" alt="Logo" class="brand-logo" />
+        </div>
+        <div class="brand-title">Cliente</div>
+      </div>
+
+      <div class="badge">Online</div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Tu información</h2>
+
+        <label class="field">
+          <span>Nombre</span>
+          <input id="nombreCliente" type="text" placeholder="Ej: Juan Pérez" maxlength="40" />
+        </label>
+
+        <div class="row">
+          <button id="btnUbicacion" class="btn ghost">Obtener ubicación</button>
+          <button id="btnPedir" class="btn primary">Pedir Moto</button>
+        </div>
+
+        <div class="status">
+          <div class="status-title">Estado del viaje</div>
+          <div id="estadoViaje" class="status-pill neutral">Sin solicitud</div>
+          <div id="detalleViaje" class="muted small"></div>
+        </div>
+
+        <div class="row">
+          <button id="btnCancelarLocal" class="btn outline" title="Borra el viaje (demo)">
+            Reiniciar demo
+          </button>
+        </div>
+      </section>
+
+      <section class="card map-card">
+        <div class="map-header">
+          <h2>Mapa</h2>
+          <div id="coords" class="muted small">Lat/Lng: —</div>
+        </div>
+        <div id="mapCliente" class="map"></div>
+        <div class="muted small mt8">
+          Acepte los permisos.
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="muted">Cliente </span>
+    </footer>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+
+  <script type="module" src="assets/js/cliente.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Moto App | Prototipo</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="assets/img/logo.jpg" alt="Logo" class="brand-logo" />
+        </div>
+        <div>
+          <div class="brand-title">Moto App</div>
+          <div class="brand-subtitle">Prototipo académico (Cliente / Conductor)</div>
+        </div>
+      </div>
+      <div class="badge">Realtime</div>
+    </header>
+
+    <main class="container">
+      <section class="card hero">
+        <div class="hero-head">
+          <img src="assets/img/logo.jpg" alt="Logo" class="hero-logo" />
+          <div>
+            <h1>Elige tu rol</h1>
+            <p class="muted">
+              Simulación tipo Yango/Uber con mapa real (OpenStreetMap) y sincronización en tiempo real (Firebase).
+            </p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <a class="btn primary" href="cliente.html">Soy Cliente</a>
+          <a class="btn dark" href="conductor.html">Soy Conductor</a>
+        </div>
+
+        <div class="tip">
+          ⚠️ Por favor elija un rol.
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Cómo probar rápido</h2>
+        <ol class="list">
+          <li>Abre <b>cliente.html</b> en tu celular (o una pestaña).</li>
+          <li>Abre <b>conductor.html</b> en tu PC (u otra pestaña/dispositivo).</li>
+          <li>Desde cliente: <b>Pedir Moto</b> → el conductor lo verá en tiempo real.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span class="muted">HTML/CSS/JS • Leaflet • Firebase Realtime Database</span>
+    </footer>
+  </div>
+</body>
+</html>
